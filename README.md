@@ -35,7 +35,7 @@ Part III - Projects
 * Frontend + Admin Area
 * Deployment 
 
-# Installing Python & Django
+## Installing Python & Django
 
 * Python - [Download Link](https://www.python.org/downloads)
 
@@ -51,4 +51,8 @@ Part III - Projects
  django-admin
  ```
  
+ ## Create a Django Project 
  
+ ```
+ django-admin startproject mypage
+ ```
