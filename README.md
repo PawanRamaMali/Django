@@ -39,9 +39,16 @@ Part III - Projects
 
 * Python - [Download Link](https://www.python.org/downloads)
 
-* Django 
+* Django - From command prompt run below command. 
  
- ```cmd
- pip install django
  ```
+ python -m pip install Django
+ ```
+ 
+ To verify , run the below command in command prompt 
+ 
+ ```
+ django-admin
+ ```
+ 
  
