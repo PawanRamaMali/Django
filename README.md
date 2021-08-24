@@ -32,7 +32,7 @@
 
 Part I - Foundations
 
-* [What is Django](#what-is-Django-?)
+* [What is Django](#what-is-Django-)
 * URLs, Routes and Views
 * Templates and Static Files
 * Data, Models and relationships
