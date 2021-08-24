@@ -7,11 +7,27 @@
 * Built for Python 3.x 
 * Build Production ready websites 
 
-# Prerequisites
+## Prerequisites
 
 * Basic Python knowledge 
 * Basic web devlopment knowledge 
 
+### Installing Python & Django
+
+* Python - [Download Link](https://www.python.org/downloads)
+
+* Django - From command prompt run below command. 
+ 
+ ```
+ python -m pip install Django
+ ```
+ 
+ To verify , run the below command in command prompt 
+ 
+ ```
+ django-admin
+ ```
+ 
 # Contents
 
 Part I - Foundations
@@ -35,21 +51,7 @@ Part III - Projects
 * Frontend + Admin Area
 * Deployment 
 
-## Installing Python & Django
 
-* Python - [Download Link](https://www.python.org/downloads)
-
-* Django - From command prompt run below command. 
- 
- ```
- python -m pip install Django
- ```
- 
- To verify , run the below command in command prompt 
- 
- ```
- django-admin
- ```
  
  ## Create a Django Project 
  
