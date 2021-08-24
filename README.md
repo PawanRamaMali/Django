@@ -52,15 +52,36 @@ Part III - Projects
 * Deployment 
 
 
+## Using a Virtual Environment
+
+* Virtual environment allows you to install Python modules into the different environments and hence have project-specific modules (instead of global modules).
+
+* You can learn more about virtual environments with Python here: https://docs.python.org/3/tutorial/venv.html
+
+* Using virtual environments is recommended but is not mandatory.
+
+## Using "Pylance"
+
+* When using Visual Studio Code (recommended), you can use the "Pylance" extension to get better code checks and code completion.
+
+* To enable it in your Python / Django project, you can add a special setting to your your project-specific configuration (i.e. your .vscode/settings.json file):
+
+```
+{
+"python.languageServer": "Pylance",
+}
+```
+
+## Create a Django Project 
  
- ## Create a Django Project 
- 
- ```
- django-admin startproject mypage
- ```
+```
+django-admin startproject mypage
+```
+Here `mypage` is the name of project
 
 ## Create Django Apps
 
 ```
 python manage.py startapp challenges
 ```
+Here `challenges` is the name of app inside django project
