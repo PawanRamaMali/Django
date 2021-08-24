@@ -6,3 +6,8 @@
 * Customizable and extensible 
 * Built for Python 3.x 
 * Build Production ready websites 
+
+# Prerequisites
+
+* Basic Python knowledge 
+* Basic web devlopment knowledge 
