@@ -11,3 +11,27 @@
 
 * Basic Python knowledge 
 * Basic web devlopment knowledge 
+
+# Contents
+
+Part I - Foundations
+
+* Django Understanding 
+* URLs, Routes and Views
+* Templates and Static Files
+* Data, Models and relationships
+
+Part II - Advanced
+
+* Working with Forms
+* Class based Views
+* File Uploads
+* Sessions
+
+Part III - Projects
+
+* Small examples
+* Building a Blog
+* Frontend + Admin Area
+* Deployment 
+
