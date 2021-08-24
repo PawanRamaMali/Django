@@ -58,3 +58,9 @@ Part III - Projects
  ```
  django-admin startproject mypage
  ```
+
+## Create Django Apps
+
+```
+python manage.py startapp challenges
+```
