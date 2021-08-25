@@ -87,7 +87,9 @@ python manage.py startapp challenges
 Here `challenges` is the name of app inside django project
 
 
+
 ## URLs (Routes) and View
+
 
 ![image](https://user-images.githubusercontent.com/11299574/130835950-b95e2d50-a4fe-40b4-a91c-45cfee0b702e.png)
 
@@ -105,11 +107,14 @@ Here `challenges` is the name of app inside django project
   * Run any other business logic
   * Prepare and return response data 
 
+
 ## Functional View Example 
+[Back to Contents](#contents)
 
 ![image](https://user-images.githubusercontent.com/11299574/130840219-351fdce1-ef3e-4ecd-9578-6063f49733d1.png)
 
 ### Adding Views and URLs
+[Back to Contents](#contents)
 
 Inside the django app folder, edit the `views.py` file as below 
 
@@ -149,7 +154,7 @@ urlpatters = [
 ```
 
 ### Dynamic Path Segments & Captured values
-
+[Back to Contents](#contents)
 
 Inside the django app folder, edit the `views.py` file as below 
 
