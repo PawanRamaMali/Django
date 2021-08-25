@@ -85,3 +85,20 @@ Here `mypage` is the name of project
 python manage.py startapp challenges
 ```
 Here `challenges` is the name of app inside django project
+
+
+## URLs (Routes) and View
+
+* Example of URL - https://github.com/ 
+* Show Profile - https://github.com/PawanRamaMali 
+* View Repositories - https://github.com/PawanRamaMali?tab=repositories 
+
+* URLs > Result : URL action mappings ensure that certain results are achieved when certain URLs are entered by the user. 
+
+* Views in Django are the logic that is executed for different URLs ( and Http methods)
+* Could be a function or class when certain URL is requested 
+* Code inside the function / class handles (evaluates) requestes and returns responses
+  * Load and prepare data 
+  * Run any other business logic
+  * Prepare and return response data 
+
