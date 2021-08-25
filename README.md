@@ -109,6 +109,7 @@ Here `challenges` is the name of app inside django project
 
 ![image](https://user-images.githubusercontent.com/11299574/130840219-351fdce1-ef3e-4ecd-9578-6063f49733d1.png)
 
+### Adding Views and URLs
 
 Inside the django app folder, edit the `views.py` file as below 
 
@@ -145,4 +146,40 @@ urlpatters = [
     path('admin/', admin.site.urls),  # default path for admin 
     path('challenges/', include('challenges.urls')) # follow or forward requests to app's url patterns from here
 ]
+```
+
+### Dynamic Path Segments & Captured values
+
+
+Inside the django app folder, edit the `views.py` file as below 
+
+```py
+from django.shortcuts import render
+from django.http import HttpResponse , HttpResponseNotFound # To send 404 error
+
+# Create views here. 
+
+def monthly_challenges(request , month):  # Second argument in urlpatterns
+    challenge_text = None
+    if month == 'january':
+        challenge_text  = "January text example" 
+    elif month = 'february':
+        challenge_text  = "February text example"
+    else:
+        return HttpResponseNotFound("This month is not supported")
+        
+    return HttpResponse(challenge_text)  
+
+```
+
+In the same directory, create `urls.py` 
+
+```py
+from django.urls import path 
+from . import views 
+
+urlpatterns = [
+    path("<month>", views.monthly_challenges) # If a request reached the url with any text , execute monthly_challenges function from views file
+]
+
 ```
