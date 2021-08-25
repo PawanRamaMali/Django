@@ -89,12 +89,15 @@ Here `challenges` is the name of app inside django project
 
 ## URLs (Routes) and View
 
-* Example of URL - https://github.com/ 
-* Show Profile - https://github.com/PawanRamaMali 
-* View Repositories - https://github.com/PawanRamaMali?tab=repositories 
+![image](https://user-images.githubusercontent.com/11299574/130835950-b95e2d50-a4fe-40b4-a91c-45cfee0b702e.png)
+
+    * Example of URL - https://github.com/ 
+    * Show Profile - https://github.com/PawanRamaMali 
+    * View Repositories - https://github.com/PawanRamaMali?tab=repositories 
 
 * URLs > Result : URL action mappings ensure that certain results are achieved when certain URLs are entered by the user. 
 
+* Views are responsible for processing requests (parsing the URL, HTTP method and potential request data) and creating a response
 * Views in Django are the logic that is executed for different URLs ( and Http methods)
 * Could be a function or class when certain URL is requested 
 * Code inside the function / class handles (evaluates) requestes and returns responses
@@ -102,3 +105,44 @@ Here `challenges` is the name of app inside django project
   * Run any other business logic
   * Prepare and return response data 
 
+## Functional View Example 
+
+![image](https://user-images.githubusercontent.com/11299574/130840219-351fdce1-ef3e-4ecd-9578-6063f49733d1.png)
+
+
+Inside the django app folder, edit the `views.py` file as below 
+
+```py
+from django.shortcuts import render # Present by default 
+from django.http import HttpResponse # Added for returning the response 
+
+# Create views here. 
+
+def index(request):  # Receive the request 
+    return HttpResponse("This works !")  # Return simple string as response
+
+```
+
+In the same directory, create `urls.py` 
+
+```py
+from django.urls import path # To use path function
+from . import views # import the views.py file functions
+
+urlpatterns = [
+    path("january", views.index) # If a request reached the url ~/january , execute index function from views file
+]
+
+```
+
+In the project's `urls.py` file 
+
+```py
+from django.contrib import admin
+from django.urls import path, include # added include to add include function
+
+urlpatters = [
+    path('admin/', admin.site.urls),  # default path for admin 
+    path('challenges/', include('challenges.urls')) # follow or forward requests to app's url patterns from here
+]
+```
