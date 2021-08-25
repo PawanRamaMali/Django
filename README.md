@@ -53,6 +53,7 @@ Part III - Projects
 
 
 ## Using a Virtual Environment
+[Back to Contents](#contents)
 
 * Virtual environment allows you to install Python modules into the different environments and hence have project-specific modules (instead of global modules).
 
@@ -61,6 +62,7 @@ Part III - Projects
 * Using virtual environments is recommended but is not mandatory.
 
 ## Using "Pylance"
+[Back to Contents](#contents)
 
 * When using Visual Studio Code (recommended), you can use the "Pylance" extension to get better code checks and code completion.
 
@@ -73,13 +75,15 @@ Part III - Projects
 ```
 
 ## Create a Django Project 
- 
+[Back to Contents](#contents)
+
 ```
 django-admin startproject mypage
 ```
 Here `mypage` is the name of project
 
 ## Create Django Apps
+[Back to Contents](#contents)
 
 ```
 python manage.py startapp challenges
@@ -89,7 +93,7 @@ Here `challenges` is the name of app inside django project
 
 
 ## URLs (Routes) and View
-
+[Back to Contents](#contents)
 
 ![image](https://user-images.githubusercontent.com/11299574/130835950-b95e2d50-a4fe-40b4-a91c-45cfee0b702e.png)
 
