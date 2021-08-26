@@ -196,8 +196,7 @@ urlpatterns = [
 
 
 ### Path Converters
-
-[Back to Contents](#contents)
+[Back to Contents](#contents) 
 
 [Django Documentation](https://docs.djangoproject.com/en/3.1/topics/http/urls/#path-converters)
 
