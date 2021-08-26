@@ -34,6 +34,8 @@ Part I - Foundations
 
 * [What is Django](#what-is-Django-)
 * [URLs, Routes and Views](#urls-routes-and-view)
+    * [Creating a View & URL](#functional-view-example) 
+    * [Path Converters](#path-converters)
 * Templates and Static Files
 * Data, Models and relationships
 
