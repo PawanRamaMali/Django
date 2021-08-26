@@ -192,3 +192,46 @@ urlpatterns = [
 ]
 
 ```
+
+
+
+### Path Converters
+[Back to Contents](#contents)
+
+
+In the app directory, create `urls.py` 
+
+```py
+from django.urls import path 
+from . import views 
+
+urlpatterns = [
+    path("<int:month>", views.monthly_challenges_by_number), # if month is a number execute `monthly_challenges_by_number` function from `views.py`
+    path("<str:month>", views.monthly_challenges) # else if month is a string execute `monthly_challenges` function from `views.py`
+]
+
+```
+
+Inside the same app folder, edit the `views.py` file as below 
+
+```py
+from django.shortcuts import render
+from django.http import HttpResponse , HttpResponseNotFound 
+
+# Create views here. 
+
+def monthly_challenges_by_number(request , month):  # if month is a integer
+    return HttpResponse(challenge_text) 
+
+def monthly_challenges(request , month):  # if month is a string
+    challenge_text = None
+    if month == 'january':
+        challenge_text  = "January text example" 
+    elif month = 'february':
+        challenge_text  = "February text example"
+    else:
+        return HttpResponseNotFound("This month is not supported")
+        
+    return HttpResponse(challenge_text)  
+
+```
