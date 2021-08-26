@@ -38,8 +38,8 @@ Part I - Foundations
     * [Path Converters](#path-converters)
     * [Redirects](#redirects)
     * [Reverse Function and Named URLs](#reverse-function-and-named-urls)
-    * Returning HTML
-    * Dynamic View Logic
+    * [Returning HTML](#returning-html)
+    * [Dynamic View Logic](#dynamic-view-logic)
 * Templates and Static Files
 * Data, Models and relationships
 
