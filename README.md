@@ -3,9 +3,9 @@
 
 Part I - Foundations
 
-* [What is Django](#what-is-Django-)
-* [rerequisites](#perequisites)
-* [Installing Python & Django](#intalling-python-&-django)
+* [What is Django ?](#what-is-Django-)
+* [Prerequisites](#prerequisites)
+* [Installing Python & Django](#installing-python-&-django)
 * [URLs, Routes and Views](#urls-routes-and-view)
     * [Creating a View & URL](#functional-view-example) 
     * [Path Converters](#path-converters)
