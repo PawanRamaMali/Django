@@ -37,6 +37,9 @@ Part I - Foundations
     * [Creating a View & URL](#functional-view-example) 
     * [Path Converters](#path-converters)
     * [Redirects](#redirects)
+    * [Reverse Function and Named URLs](#reverse-function-and-named-urls)
+    * Returning HTML
+    * Dynamic View Logic
 * Templates and Static Files
 * Data, Models and relationships
 
@@ -361,12 +364,79 @@ def monthly_challenges_by_number(request , month):
     return HttpResponseRedirect(redirect_path)
     
 
-def monthly_challenges(request , month):  # if month is a string
+def monthly_challenges(request , month):  
    try:
         challenge_text = monthly_challenges[month]
         response_data = f"<h1> {challenge_text} </h1>"  # Returning HTML 
         return HttpResponse(response_data)
    except:
         return HttpResponseNotFound("<h1> This month is not supported </h1>")      # Returning HTML 
+
+```
+
+
+### Dynamic View Logic
+
+[Back to Contents](#contents) 
+
+In the app `urls.py` 
+
+```py
+from django.urls import path 
+from . import views 
+
+urlpatterns = [
+    path("", views.index), # /challenges/ 
+    path("<int:month>", views.monthly_challenges_by_number), 
+    path("<str:month>", views.monthly_challenges, name="month-challenge") 
+]
+
+```
+
+Inside the `views.py` file 
+
+```py
+from django.shortcuts import render
+from django.http import HttpResponse , HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse 
+
+monthly_challenges = {
+    "january" : " Eat healthy ",
+    "february": " Work Smart ",
+    "march"   : " Sleep on time", 
+    }
+
+# Create views here. 
+
+def index(request):
+    list_items = ""
+    months = list(monthly_challenges.keys())
+    
+    for month in months:
+        capitalized_month = month.capitalize()
+        month_path = reverse("month-challenge", args=[month])
+        list_items += f"<li> <a href=\"{month_path}\">{capitalized_month}</a></li>"
+        
+    resposne_data = f"<ul>{list_items}</ul>"
+    return HttpResposne(resposne_data)
+
+def monthly_challenges_by_number(request , month): 
+    months = list(monthly_challenges.keys())
+    
+    if month > len(months):
+        return HttpResponseNotFound("Invalid month")
+        
+    redirect_month = months[month - 1]
+    redirect_path = reverse("month-challenge", args=[redirect_month])
+    return HttpResponseRedirect(redirect_path)
+    
+
+def monthly_challenges(request , month):  
+   try:
+        challenge_text = monthly_challenges[month]
+        response_data = f"<h1> {challenge_text} </h1>"   
+        return HttpResponse(response_data)
+   except:
+        return HttpResponseNotFound("<h1> This month is not supported </h1>")     
 
 ```
