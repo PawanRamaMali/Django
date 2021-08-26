@@ -36,6 +36,7 @@ Part I - Foundations
 * [URLs, Routes and Views](#urls-routes-and-view)
     * [Creating a View & URL](#functional-view-example) 
     * [Path Converters](#path-converters)
+    * [Redirects](#redirects)
 * Templates and Static Files
 * Data, Models and relationships
 
@@ -281,4 +282,50 @@ def monthly_challenges(request , month):  # if month is a string
 [Back to Contents](#contents) 
 
 
+Inside the `views.py` file 
 
+```py
+from django.shortcuts import render
+from django.http import HttpResponse , HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse # allows us to refer to names of paths 
+
+monthly_challenges = {
+    "january" : " Eat healthy ",
+    "february": " Work Smart ",
+    "march"   : " Sleep on time", 
+    }
+
+# Create views here. 
+
+def monthly_challenges_by_number(request , month): 
+    months = list(monthly_challenges.keys())
+    
+    if month > len(months):
+        return HttpResponseNotFound("Invalid month")
+        
+    redirect_month = months[month - 1]
+    redirect_path = reverse("month-challenge", args=[redirect_month]) # /challenge/january
+    return HttpResponseRedirect(redirect_path)
+    
+
+def monthly_challenges(request , month):  # if month is a string
+   try:
+        challenge_text = monthly_challenges[month]
+        return HttpResponse(challenge_text)
+   except:
+        return HttpResponseNotFound("This month is not supported")     
+
+```
+
+In the app `urls.py` 
+
+```py
+from django.urls import path 
+from . import views 
+
+urlpatterns = [
+    path("<int:month>", views.monthly_challenges_by_number), 
+    path("<str:month>", views.monthly_challenges, name="month-challenge") 
+]
+
+```
