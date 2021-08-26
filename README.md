@@ -1,3 +1,35 @@
+
+# Contents
+
+Part I - Foundations
+
+* [What is Django](#what-is-Django-)
+* [rerequisites](#perequisites)
+* [Installing Python & Django](#intalling-python-&-django)
+* [URLs, Routes and Views](#urls-routes-and-view)
+    * [Creating a View & URL](#functional-view-example) 
+    * [Path Converters](#path-converters)
+    * [Redirects](#redirects)
+    * [Reverse Function and Named URLs](#reverse-function-and-named-urls)
+    * [Returning HTML](#returning-html)
+    * [Dynamic View Logic](#dynamic-view-logic)
+* Templates and Static Files
+* Data, Models and relationships
+
+Part II - Advanced
+
+* Working with Forms
+* Class based Views
+* File Uploads
+* Sessions
+
+Part III - Projects
+
+* Small examples
+* Building a Blog
+* Frontend + Admin Area
+* Deployment 
+
 # What is Django ?
 
 * Django is Python web development framework 
@@ -27,35 +59,6 @@
  ```
  django-admin
  ```
- 
-# Contents
-
-Part I - Foundations
-
-* [What is Django](#what-is-Django-)
-* [URLs, Routes and Views](#urls-routes-and-view)
-    * [Creating a View & URL](#functional-view-example) 
-    * [Path Converters](#path-converters)
-    * [Redirects](#redirects)
-    * [Reverse Function and Named URLs](#reverse-function-and-named-urls)
-    * [Returning HTML](#returning-html)
-    * [Dynamic View Logic](#dynamic-view-logic)
-* Templates and Static Files
-* Data, Models and relationships
-
-Part II - Advanced
-
-* Working with Forms
-* Class based Views
-* File Uploads
-* Sessions
-
-Part III - Projects
-
-* Small examples
-* Building a Blog
-* Frontend + Admin Area
-* Deployment 
 
 
 ## Using a Virtual Environment
