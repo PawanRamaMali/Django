@@ -1,5 +1,7 @@
 
-# CODING STYLE > MAKING YOUR CODE READABLE
+# Coding Style Guide 
+
+## Make your code readable
 
 
 1. Avoid abbreviating variable names.
@@ -7,18 +9,11 @@
 3. Document your classes and methods.
 4. Comment your code.
 5. Refactor repeated lines of code into reusable functions or methods.
-6. Keep functions and methods short. A good rule of thumb is that scrolling
-should not be necessary to read an entire function or method.
+6. Keep functions and methods short. A good rule of thumb is that scrolling should not be necessary to read an entire function or method.
 
- TIP: Use Flake8 for Checking Code Quality.
+* TIP : Use Flake8 for Checking Code Quality.
 
-
-
- CODING STYLE > THE WORD ON IMPORTS
-
-
-
-# Imports should be grouped in the following order:
+## Imports should be grouped in the following order:
 
  1. Standard library imports.
  2. Core Django imports.
@@ -27,16 +22,10 @@ should not be necessary to read an entire function or method.
  Use explicit relative imports.
  Avoid using import *
 
-
-# CODING STYLE > OTHERS
-
+* TIP : Use underscores in URL pattern names rather than dashes.
 
 
-Use underscores in URL pattern names rather than dashes.
-
-
-
-# Deployment
+# Deployment Guide
 
 
 
