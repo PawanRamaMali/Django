@@ -25,26 +25,24 @@
 * TIP : Use underscores in URL pattern names rather than dashes.
 
 
-# Deployment Guide
+## Deployment Guide
+
+* add your media, database, venv, __pycache__ to the .gitignore 
+* keep migration files in the git (you will need to migrate them in target server)
+* don't run "makemigrations" in the target server (you will need to just run "migrate")
+* $ pip freeze > requirements.txt
+* make appropriate changes in your project settings.py file (change DEBUG to False and etc)
+* push your code to your git-server
+* pull your code in your target server
+* give right permissions to the web-server (e.g. $ chown www-data:www-data -R /var/www/myproject)
+* make a new venv in the target server and activate it
+* $ sudo pip install -r requirements.txt
+* sudo ./venv/bin/python3 manage.py migrate
+* restart your web-server (in case of apache: $ sudo service apache2 restart)
 
 
 
-### add your media, database, venv, __pycache__ to the .gitignore 
-### keep migration files in the git (you will need to migrate them in target server)
-### don't run "makemigrations" in the target server (you will need to just run "migrate")
-### $ pip freeze > requirements.txt
-### make appropriate changes in your project settings.py file (change DEBUG to False and etc)
-### push your code to your git-server
-### pull your code in your target server
-### give right permissions to the web-server (e.g. $ chown www-data:www-data -R /var/www/myproject)
-### make a new venv in the target server and activate it
-### $ sudo pip install -r requirements.txt
-### sudo ./venv/bin/python3 manage.py migrate
-### restart your web-server (in case of apache: $ sudo service apache2 restart)
-
-
-
-# DJANGO-ADMIN
+## DJANGO-ADMIN Command Description
 
 | Django Command                           | Description | 
 |------------------------------------------|------------------------------------------------------------------------------------------------------|
@@ -80,17 +78,16 @@
  | django-admin version                     | display the current django version |
 
 
-# Starting a django project in python3
+## Starting a django project in python3
 
 
-
-  1. $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; python3 get-pip.py						
-  2. $ pip install virtualenv
-  3. $ mkdir django-projects
-  4. $ cd django-projects  
-  5. $ virtualenv venv 								
-  6. $ source venv/bin/activate	
-  7. $ pip install django							
-  8. $ django-admin startproject myproject
-  9. $ django-admin startapp myapp
-  10. $ python manage.py runserver
+  * $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; python3 get-pip.py						
+  * $ pip install virtualenv
+  * $ mkdir django-projects
+  * $ cd django-projects  
+  * $ virtualenv venv 								
+  * $ source venv/bin/activate	
+  * $ pip install django							
+  * $ django-admin startproject myproject
+  * $ django-admin startapp myapp
+  * $ python manage.py runserver
